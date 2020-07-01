@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form>
+        <table border="1">
+            <tr>
+                <th colspan="2">Pizza Shop 2.0</th>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="ime" id="ime" maxlength="20" required></td>
+            </tr>
+            <tr>
+                <td>Pizza Topping</td>
+                <td>
+                    <input type="radio" name="topping" id="topping1">
+                    <label for="topping1">Supreme</label> <br>
+                    <input type="radio" name="topping" id="topping2">
+                    <label for="topping2">Vegetarian</label> <br>
+                    <input type="radio" name="topping" id="topping3">
+                    <label for="topping3">Hawaiian</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Pizza Sauce</td>
+                <td>
+                    <select name="psauce" id="psauce">
+                        <option value="1">Tomato</option>
+                        <option value="2">Garlic</option>
+                        <option value="3">Hot Sauce</option>
+                        <option value="4">Mayo</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Optional Extras</td>
+                <td>
+                    <input type="checkbox" name="extra1" id="extra1">
+                    <label for="extra1">Extra Cheese</label>
+                    <input type="checkbox" name="extra2" id="extra2">
+                    <label for="extra2">Gluten Free Base</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    Delivery Instructions: <br>
+                    <textarea name="dinstructions" id="dinstructions" cols="50" rows="5" maxlength="100" required></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" name="submit" id="submit" value="Send my Order">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>
