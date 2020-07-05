@@ -6,19 +6,65 @@
     <style>
         body {
             background-color: black;
+            margin: 0;
+            font-family: Arial, Sans-Serif;
+            font-size: 16px;
         }
         .page {
-            max-width: 900px;
-            height: 700px;
             background-color: white;
+            width: 900px;
+            height: 100%;
             margin: auto;
-        } 
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        header div:first-child {
+            height: 150px;
+            background: gray url("slike/forest.jpg") no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        header div:first-child span {
+            color: white;
+            position: absolute;
+            bottom: 15px;
+            right: 10px;
+        }
+        nav {
+            background-image: linear-gradient(rgb(241, 241, 241), rgb(211, 211, 211));
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav li {
+            display: inline-block;
+            padding: 0.5rem 2rem;
+            border-right: 0.1rem solid white;
+        }
     </style>
 </head>
 <body>
 
-    <div class="page">
-
+    <div class="page grid">
+        <header>
+            <div>
+                <span>Some text</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href=""></a>HOME</li>
+                    <li><a href=""></a>ABOUT</li>
+                    <li><a href=""></a>BLOG</li>
+                    <li><a href=""></a>GALLERY</li>
+                    <li><a href=""></a>CONTACT</li>
+                </ul>
+            </nav>
+        </header>
     </div>
 
 </body>
