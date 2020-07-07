@@ -4,21 +4,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body {
             background-color: black;
             margin: 0;
             font-family: Arial, Sans-Serif;
-            font-size: 16px;
+            font-size: 13px;
         }
         .page {
             background-color: white;
             width: 900px;
             height: 100%;
             margin: auto;
+            position: relative;
         }
         .grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
+            grid-template-areas: "header header header" 
+                       "content content sidebar" 
+                       "footer footer footer";
+        }
+        header {
+            grid-area: header;
         }
         header div:first-child {
             height: 150px;
@@ -26,7 +36,6 @@
             background-size: cover;
             position: relative;
         }
-
         header div:first-child span {
             color: white;
             position: absolute;
@@ -45,6 +54,48 @@
             display: inline-block;
             padding: 0.5rem 2rem;
             border-right: 0.1rem solid white;
+        }
+        main {
+            grid-area: content;
+        }
+        .box {
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 5px 25px;
+            margin: 10px;
+        }
+        span.title {
+            color: rgb(47, 218, 47);
+            display: block;
+            font-size: 1.5rem;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+        .row {
+            width: 100%;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        .products img {
+            width: 120px;
+            height: 80px;
+            float: left;
+            margin-right: 20px;
+        }
+        aside {
+            grid-area: sidebar;
+        }
+        footer {
+            grid-area: footer;
+            position: absolute;
+            bottom: 0;
+            padding: 30px;
+            background-color: rgb(47, 218, 47);
+            width: 100%;
+            text-align: center;
         }
     </style>
 </head>
@@ -65,6 +116,52 @@
                 </ul>
             </nav>
         </header>
+
+        <main>
+            <div class="box">
+                <span class="title">WELCOME TO HOME PAGE</span>
+                <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut non cupiditate fugiat debitis deserunt, modi recusandae fuga ad quos voluptatibus in nobis vitae ea tempore, soluta quaerat maiores, vel minus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic nihil voluptatibus perspiciatis quibusdam in sequi, sunt mollitia reprehenderit omnis autem sed ea vel sit eaque temporibus? Beatae eligendi quos alias!</span>
+            </div>
+            <div class="box">
+                <span class="title">Our Free Products</span>
+                <div class="products">
+                    <div class="row">
+                        <img src="slike/forest.jpg" alt="Picture try to find me">
+                        <span class="img_text">
+                            <h3>Just try to find me</h3>
+                            <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia neque consectetur odio doloremque optio eius qui labore, iure harum fugit facere recusandae exercitationem deleniti minima numquam inventore quaerat ex! Velit?</span>
+                        </span>
+                    </div>
+                    <div class="row">
+                        <img src="slike/forest.jpg" alt="Picture try to find me">
+                        <span class="img_text">
+                            <h3>Just try to find me</h3>
+                            <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia neque consectetur odio doloremque optio eius qui labore, iure harum fugit facere recusandae exercitationem deleniti minima numquam inventore quaerat ex! Velit?</span>
+                        </span>
+                    </div>
+                    <div class="row">
+                        <img src="slike/forest.jpg" alt="Picture try to find me">
+                        <span class="img_text">
+                            <h3>Just try to find me</h3>
+                            <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia neque consectetur odio doloremque optio eius qui labore, iure harum fugit facere recusandae exercitationem deleniti minima numquam inventore quaerat ex! Velit?</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <aside>
+            <div>
+                <span class="title">NEWS</span>
+                <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi totam fugit recusandae aliquam repudiandae voluptates tempora, iure voluptatibus quisquam et qui fuga velit! Iusto eligendi itaque asperiores! Iste, at debitis.</span>
+            </div>
+        </aside>
+
+        <footer>
+            <div>
+                <span>In the twilight of one's life Copyright @|<a href="">HTML</a> |<a href="">CSS</a></span>
+            </div>
+        </footer>
     </div>
 
 </body>
