@@ -1,0 +1,84 @@
+.main_element {
+    box-sizing: border-box;
+    width: 500px;
+    height: 250px;
+    border-style: dotted solid double dashed;
+    border-color: yellow green blue red;
+    border-width: 10px;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+.first_heading {
+    font-size: 30px;
+    text-shadow: 5px 5px 10px rgb(121, 121, 121);
+}
+.second_heading {
+    font-size: 18px;
+    text-shadow: 5px 5px 10px rgb(121, 121, 121);
+}
+
+.border_div1 {
+    border: 3px solid blue;
+    border-radius: 55px;
+    margin-top: 25px;
+}
+.border_div2 {
+    border: 3px solid green;
+    border-radius: 50px;
+}
+.border_div3 {
+    border: 3px solid yellow;
+    border-radius: 50px;
+}
+.border_div4 {
+    border: 3px solid red;
+    border-radius: 50px;
+    padding: 7px;
+}
+
+.input_div {
+    margin-top: 10px;
+    margin-left: -180px;
+}
+input {
+    background-color: rgb(219, 143, 0);
+    border-top-color: rgb(255, 187, 0);
+    border-left-color: rgb(255, 187, 0);
+    border-bottom-color: rgb(80, 52, 0);
+    border-right-color: rgb(80, 52, 0);
+}
+
+.bubble {
+    background-color: rgba(128, 128, 128, 0.7);
+    border-radius: 50%;
+    border: 3px white dashed;
+    box-shadow: 0 0 0 4px rgba(128, 128, 128, 0.7);
+}
+.b1 {
+    position: absolute;
+    bottom: 40%;
+    right: 15%;
+    width: 12px;
+    height: 12px;
+}
+.b2 {
+    position: absolute;
+    bottom: 50%;
+    right: 7%;
+    width: 25px;
+    height: 25px;
+}
+.b3 {
+    position: absolute;
+    bottom: 60%;
+    right: -13%;
+    width: 90px;
+    height: 60px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 30%;
+}
