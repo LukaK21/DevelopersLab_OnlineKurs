@@ -1,8 +1,9 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Zad2</title>
     <style>
         * {
             box-sizing: border-box;
@@ -10,159 +11,229 @@
         body {
             background-color: black;
             margin: 0;
+            padding: 0;
             font-family: Arial, Sans-Serif;
-            font-size: 13px;
+            font-size: 16px;
         }
         .page {
+            max-width: 900px;
             background-color: white;
-            width: 900px;
-            height: 100%;
             margin: auto;
             position: relative;
         }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-areas: "header header header" 
-                       "content content sidebar" 
-                       "footer footer footer";
-        }
         header {
-            grid-area: header;
+            background-color: lightgray;
+            width: 100%;
         }
-        header div:first-child {
-            height: 150px;
-            background: gray url("slike/forest.jpg") no-repeat;
-            background-size: cover;
+        .header-img {
             position: relative;
+            display: block;
         }
-        header div:first-child span {
-            color: white;
+        .header-img span {
             position: absolute;
-            bottom: 15px;
+            bottom: 20px;
             right: 10px;
-        }
-        nav {
-            background-image: linear-gradient(rgb(241, 241, 241), rgb(211, 211, 211));
+            color: white;
+            font-size: 1.2rem;;
         }
         nav ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
         }
-        nav li {
+        nav ul li {
             display: inline-block;
-            padding: 0.5rem 2rem;
-            border-right: 0.1rem solid white;
+            padding: 10px 35px;
+            border-right: 1px solid white;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        nav ul li:hover {
+            background-color: green;
+            color: white;
+        }
+        nav ul a {
+            text-decoration: none;
+            color: black;
         }
         main {
-            grid-area: content;
+            width: 100%;
+            padding: 25px 25px 0px 25px;
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
         }
-        .box {
+        main div.right {
+            margin-left: 30px;
+        }
+        div.box {
+            width: 100%;
+            padding: 15px 25px;
             border: 1px solid black;
             border-radius: 10px;
-            padding: 5px 25px;
-            margin: 10px;
-        }
-        span.title {
-            color: rgb(47, 218, 47);
-            display: block;
-            font-size: 1.5rem;
-            margin-top: 5px;
             margin-bottom: 10px;
         }
-        .row {
+        div.box:hover {
+            background-color: lightgray;
+        }
+        div.box h2 {
+            margin: 0px;
+            text-transform: uppercase;
+            color: rgb(70, 224, 70);
+        }
+        div.box h2.stitle {     
+            text-transform: capitalize;
+            margin-bottom: 35px;
+        }
+        div.box p {
+            font-size: 0.8rem;
+        }
+        div.products {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: repeat(3, 1fr);
+            gap: 20px;
+        }
+        div.products img {
             width: 100%;
+            height: 100%;
+            max-height: 150px;
         }
-        .row::after {
-            content: "";
-            clear: both;
-            display: table;
+        div.products h3 {
+            margin: 0px;
+            font-size: 1.1rem;
         }
-        .products img {
-            width: 120px;
-            height: 80px;
-            float: left;
-            margin-right: 20px;
+        .text-block {
+            display: block;
         }
-        aside {
-            grid-area: sidebar;
+        .see-more {
+            color: green;
+        }
+        .see-more:visited {
+            color: green;
         }
         footer {
-            grid-area: footer;
-            position: absolute;
-            bottom: 0;
-            padding: 30px;
-            background-color: rgb(47, 218, 47);
+            background-color: green;
             width: 100%;
+            position: relative;
+        }
+        footer span {
+            display: block;
+            padding: 30px;
             text-align: center;
+        }
+        footer a {
+            color: black;
+        }
+
+        @media screen and (max-width: 900px) {
+            .page {
+                max-width: 100%;
+                margin: 0;
+            }
+
+            nav ul li {
+                display: block;
+                padding: 10px;
+                border: none;
+                border-bottom: 1px solid white;
+                width: 100%;
+                text-align: center;
+            }
+            
+            main {
+                width: 100%;
+                padding: 25px 25px 0px 25px;
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+            main div.right {
+                margin: 0px;
+            }
         }
     </style>
 </head>
+
 <body>
 
-    <div class="page grid">
+    <div class="page">
         <header>
-            <div>
+            <div class="header-img">
+                <img src="images/park.jpg" alt="park image" width="100%" height="200px">
                 <span>Some text</span>
             </div>
             <nav>
                 <ul>
-                    <li><a href=""></a>HOME</li>
-                    <li><a href=""></a>ABOUT</li>
-                    <li><a href=""></a>BLOG</li>
-                    <li><a href=""></a>GALLERY</li>
-                    <li><a href=""></a>CONTACT</li>
+                    <!-- Comment tag is added to remove line break spaces inline block gives in li elements -->
+                    <a href=""><li>Home</li></a><!--
+                    --><a href=""><li>About</li></a><!--
+                    --><a href=""><li>Blog</li></a><!--
+                    --><a href=""><li>Gallery</li></a><!--
+                    --><a href=""><li>Contact</li></a>
                 </ul>
             </nav>
         </header>
-
         <main>
-            <div class="box">
-                <span class="title">WELCOME TO HOME PAGE</span>
-                <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut non cupiditate fugiat debitis deserunt, modi recusandae fuga ad quos voluptatibus in nobis vitae ea tempore, soluta quaerat maiores, vel minus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic nihil voluptatibus perspiciatis quibusdam in sequi, sunt mollitia reprehenderit omnis autem sed ea vel sit eaque temporibus? Beatae eligendi quos alias!</span>
-            </div>
-            <div class="box">
-                <span class="title">Our Free Products</span>
-                <div class="products">
-                    <div class="row">
-                        <img src="slike/forest.jpg" alt="Picture try to find me">
-                        <span class="img_text">
+            <div>
+                <div class="box">
+                    <h2>Welcome to home page</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium perspiciatis sed exercitationem unde. Laboriosam, dignissimos fuga. Corrupti deserunt quaerat tempore repudiandae. 
+                        Explicabo, corporis reiciendis. Aliquid rem odit quasi quo sequi. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos ex reiciendis impedit, commodi repellat, hic 
+                        voluptas cumque error qui magni corporis recusandae molestiae vero quaerat eos saepe eveniet incidunt consequatur.</p>
+                </div>
+                <div class="box">
+                    <h2 class="stitle">Our free products</h2>
+                    <div class="products">
+                        <img src="images/img1.jpg" alt="just try to find me image">
+                        <div>
                             <h3>Just try to find me</h3>
-                            <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia neque consectetur odio doloremque optio eius qui labore, iure harum fugit facere recusandae exercitationem deleniti minima numquam inventore quaerat ex! Velit?</span>
-                        </span>
-                    </div>
-                    <div class="row">
-                        <img src="slike/forest.jpg" alt="Picture try to find me">
-                        <span class="img_text">
-                            <h3>Just try to find me</h3>
-                            <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia neque consectetur odio doloremque optio eius qui labore, iure harum fugit facere recusandae exercitationem deleniti minima numquam inventore quaerat ex! Velit?</span>
-                        </span>
-                    </div>
-                    <div class="row">
-                        <img src="slike/forest.jpg" alt="Picture try to find me">
-                        <span class="img_text">
-                            <h3>Just try to find me</h3>
-                            <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia neque consectetur odio doloremque optio eius qui labore, iure harum fugit facere recusandae exercitationem deleniti minima numquam inventore quaerat ex! Velit?</span>
-                        </span>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit mollitia praesentium minus repudiandae quam modi unde, odit tenetur provident soluta. Earum, ratione dignissimos porro officiis atque odio id! Iusto, veritatis!</p>
+                        </div>
+                        <img src="images/img2.jpg" alt="meeting place image">
+                        <div>
+                            <h3>Meeting place</h3>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit mollitia praesentium minus repudiandae quam modi unde, odit tenetur provident soluta. Earum, ratione dignissimos porro officiis atque odio id! Iusto, veritatis!</p>
+                        </div>
+                        <img src="images/img3.jpg" alt="skate show image">
+                        <div>
+                            <h3>Skate Show</h3>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit mollitia praesentium minus repudiandae quam modi unde, odit tenetur provident soluta. Earum, ratione dignissimos porro officiis atque odio id! Iusto, veritatis!</p>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="right">
+                <div class="box">
+                    <h2>News</h2>
+                    <p>
+                        <span class="text-block">August 2, 2009</span>
+                        <span class="text-block">Aliquam eget varius arcu.</span>
+                        <a class="see-more" href="">see more...</a>
+                    </p>
+                    <p>
+                        <span class="text-block">August 1, 2009</span>
+                        <span class="text-block">Aliquam eget varius arcu.</span>
+                        <a class="see-more" href="">see more...</a>
+                    </p>
+                    <p>
+                        <span class="text-block">July 28, 2009</span>
+                        <span class="text-block">Aliquam eget varius arcu.</span>
+                        <a class="see-more" href="">see more...</a>
+                    </p>
+                </div>
+                <div class="box">
+                    <h2>Messages</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium perspiciatis sed exercitationem unde. Laboriosam, dignissimos fuga. Corrupti deserunt quaerat tempore repudiandae. 
+                        Explicabo, corporis reiciendis. Aliquid rem odit quasi quo sequi. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos ex reiciendis impedit, commodi repellat, hic 
+                        voluptas cumque error qui magni corporis recusandae molestiae vero quaerat eos saepe eveniet incidunt consequatur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium 
+                        perspiciatis sed exercitationem unde. Laboriosam, dignissimos fuga.<br><a class="see-more" href="">see more...</a></p>
+                </div>
+            </div>
         </main>
-
-        <aside>
-            <div>
-                <span class="title">NEWS</span>
-                <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi totam fugit recusandae aliquam repudiandae voluptates tempora, iure voluptatibus quisquam et qui fuga velit! Iusto eligendi itaque asperiores! Iste, at debitis.</span>
-            </div>
-        </aside>
-
         <footer>
-            <div>
-                <span>In the twilight of one's life Copyright @|<a href="">HTML</a> |<a href="">CSS</a></span>
-            </div>
+            <span>In the twilight of one's life Copyright &copy|<a href="">HTML</a> |<a href="">CSS</a></span>
         </footer>
     </div>
 
 </body>
+
 </html>
